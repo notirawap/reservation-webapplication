@@ -1,0 +1,10 @@
+mode: set
+github.com/notirawap/bookings/cmd/web/main.go:24.13,26.16 2 0
+github.com/notirawap/bookings/cmd/web/main.go:26.16,28.3 1 0
+github.com/notirawap/bookings/cmd/web/main.go:31.2,37.16 4 0
+github.com/notirawap/bookings/cmd/web/main.go:40.18,59.16 10 1
+github.com/notirawap/bookings/cmd/web/main.go:59.16,62.3 2 0
+github.com/notirawap/bookings/cmd/web/main.go:63.2,71.12 6 1
+github.com/notirawap/bookings/cmd/web/middleware.go:12.45,24.2 3 1
+github.com/notirawap/bookings/cmd/web/middleware.go:28.50,30.2 1 1
+github.com/notirawap/bookings/cmd/web/routes.go:13.49,44.2 18 1

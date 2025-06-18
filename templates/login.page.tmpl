@@ -1,0 +1,40 @@
+{{template "base" .}}
+{{define "css"}}
+<style>
+    body {
+        padding-bottom: 0; 
+    }
+</style>
+{{end}}
+{{define "content"}}
+<!-- Login page -->
+<div class="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center" 
+style="background: url('/static/images/3dprint.png') no-repeat center center; background-size: cover; z-index: -1;">
+        <div class="border rounded-4 p-4 w-100 text-center" style="max-width: 500px; background-color: aliceblue;">
+            <h1 class="mb-4"><strong>Welcome back.</strong></h1>
+            <form action="/user/login" method="post" class="" novalidate>
+                <input type="hidden" name="csrf_token" value="{{.CSRFToken}}">
+                <div class="mb-3 text-start">
+                    <label for="text" class="form-label">Email</label>
+                    {{with .Form.Errors.Get "email"}} 
+                    <label class="text-danger">{{.}}</label> 
+                    {{end}}
+                    <input required type="email"
+                        class="form-control {{with .Form.Errors.Get "email"}} is-invalid {{end}}" 
+                        id="email" name="email" autocomplete="off" value="{{.Form.Get "email"}}">
+                </div>
+                <div class="mb-3 text-start">
+                    <label for="password" class="form-label">Password</label>
+                    {{with .Form.Errors.Get "password"}} 
+                    <label class="text-danger">{{.}}</label> 
+                    {{end}}
+                    <input required type="password"
+                        class="form-control {{with .Form.Errors.Get "password"}} is-invalid {{end}}" 
+                        id="password" name="password" autocomplete="off" value="{{.Form.Get "password"}}">
+                </div>
+                <button type="submit" class="btn btn-primary w-100 mt-3">Log in</button>
+            </form>
+        </div>
+    </div>
+{{end}}
+

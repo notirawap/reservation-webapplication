@@ -1,0 +1,25 @@
+mode: set
+github.com/notirawap/bookings/internal/render/render.go:23.40,25.2 1 1
+github.com/notirawap/bookings/internal/render/render.go:29.84,41.2 5 1
+github.com/notirawap/bookings/internal/render/render.go:44.105,46.18 2 1
+github.com/notirawap/bookings/internal/render/render.go:46.18,49.3 1 0
+github.com/notirawap/bookings/internal/render/render.go:49.8,52.3 1 1
+github.com/notirawap/bookings/internal/render/render.go:55.2,56.9 2 1
+github.com/notirawap/bookings/internal/render/render.go:56.9,58.3 1 1
+github.com/notirawap/bookings/internal/render/render.go:62.2,65.16 4 1
+github.com/notirawap/bookings/internal/render/render.go:65.16,68.3 2 0
+github.com/notirawap/bookings/internal/render/render.go:70.2,71.16 2 1
+github.com/notirawap/bookings/internal/render/render.go:71.16,74.3 2 0
+github.com/notirawap/bookings/internal/render/render.go:75.2,75.12 1 1
+github.com/notirawap/bookings/internal/render/render.go:79.67,85.16 3 1
+github.com/notirawap/bookings/internal/render/render.go:85.16,87.3 1 0
+github.com/notirawap/bookings/internal/render/render.go:89.2,89.29 1 1
+github.com/notirawap/bookings/internal/render/render.go:89.29,94.17 3 1
+github.com/notirawap/bookings/internal/render/render.go:94.17,96.4 1 0
+github.com/notirawap/bookings/internal/render/render.go:98.3,99.17 2 1
+github.com/notirawap/bookings/internal/render/render.go:99.17,101.4 1 0
+github.com/notirawap/bookings/internal/render/render.go:104.3,104.23 1 1
+github.com/notirawap/bookings/internal/render/render.go:104.23,106.18 2 1
+github.com/notirawap/bookings/internal/render/render.go:106.18,108.5 1 0
+github.com/notirawap/bookings/internal/render/render.go:110.3,110.21 1 1
+github.com/notirawap/bookings/internal/render/render.go:112.2,112.21 1 1

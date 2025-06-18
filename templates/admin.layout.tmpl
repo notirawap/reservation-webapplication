@@ -1,0 +1,123 @@
+{{define "admin"}}
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Administration</title>
+         <!-- import third-party HTML template -->
+        <link rel="stylesheet" href="/static/admin/vendors/ti-icons/css/themify-icons.css">
+        <link rel="stylesheet" href="/static/admin/vendors/base/vendor.bundle.base.css">
+        <link rel="stylesheet" href="/static/admin/css/style.css">
+        <link rel="shortcut icon" href="/static/admin/images/favicon.png"/>
+        <!-- import third-party CSS file for Notification -->
+        <link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css">
+        <!-- Import CSS locally -->
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+        {{block "css" . }}{{end}}
+    </head>
+    <body>
+    <div class="container-scroller">
+        <!-- Top nav bar -->
+        <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    <span class="ti-view-list"></span>
+                </button>
+            </div>
+            <div class="text-center d-flex align-items-center">
+                <a class="navbar-brand brand-logo-mini" href="/admin/dashboard">
+                    <img src="/static/images/logo.png" alt="logo" style="height: 60px; width: auto;" />
+                </a>
+            </div>
+            <div class="d-flex align-items-center">
+                <ul class="navbar-nav navbar-nav-right d-flex flex-row align-items-center mb-0">
+                    <li class="nav-item nav-profile me-3">
+                        <a class="nav-link" href="/">
+                            Public Site
+                        </a>
+                    </li>
+                    <li class="nav-item nav-profile me-3">
+                        <a class="nav-link" href="/user/logout">
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container-fluid page-body-wrapper">
+            <!-- side bar -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/doctors-table">
+                            <i class="ti-shield menu-icon"></i>
+                            <span class="menu-title">Dashboard</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- main panel -->
+            <div class="main-panel z-1">
+                <div class="content-wrapper">
+                    <div class="row">
+                        <div class="col-md-12 grid-margin">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h1 class="font-weight-bold mb-0">{{block "page-title" .}} {{end}}</h1>
+                                </div>
+                            <div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {{block "content" .}}{{end}}
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            </div>
+        </footer>
+    </div>
+
+    <script src="/static/admin/vendors/base/vendor.bundle.base.js"></script>
+    <script src="/static/admin/js/off-canvas.js"></script>
+    <script src="/static/admin/js/hoverable-collapse.js"></script>
+    <script src="/static/admin/js/template.js"></script>
+    <script src="/static/admin/js/todolist.js"></script>
+    <script src="/static/admin/js/dashboard.js"></script>
+    <!-- import third-party JS file for Notie -->
+    <script src="https://unpkg.com/notie"></script>
+    <!-- import third-party JS file for Modal -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+    <!-- Import JS locally -->
+    <script src="/static/js/app.js"></script>
+    {{block "js" . }}
+
+    {{end}}
+
+    <script>
+        // Store JS module to be accessible for all code
+        let attention = Prompt();
+        // Configure Alerts
+        function notify(msg, msgType) {
+            notie.alert({
+            type: msgType,
+            text: msg,
+            })
+        }
+        // If Flash field has value, execute this.
+        {{with .Flash}} 
+            notify("{{.}}", "success")
+        {{end}}
+        // If Error field has value, execute this.
+        {{with .Error}}
+            notify("{{.}}", "error")
+        {{end}}
+    </script>
+
+    </body>
+    </html>
+{{end}}

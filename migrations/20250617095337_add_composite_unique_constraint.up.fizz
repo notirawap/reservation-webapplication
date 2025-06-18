@@ -1,0 +1,2 @@
+add_index("doctors", ["first_name", "last_name", "license"], {unique: true, name: "uq_doctors_name_license"})
+

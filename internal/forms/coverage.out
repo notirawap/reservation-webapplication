@@ -1,0 +1,18 @@
+mode: set
+github.com/notirawap/bookings/internal/forms/errors.go:6.44,9.2 1 1
+github.com/notirawap/bookings/internal/forms/errors.go:12.42,14.18 2 1
+github.com/notirawap/bookings/internal/forms/errors.go:14.18,16.3 1 1
+github.com/notirawap/bookings/internal/forms/errors.go:17.2,17.14 1 1
+github.com/notirawap/bookings/internal/forms/forms.go:21.33,26.2 1 1
+github.com/notirawap/bookings/internal/forms/forms.go:29.29,31.2 1 1
+github.com/notirawap/bookings/internal/forms/forms.go:36.43,37.31 1 1
+github.com/notirawap/bookings/internal/forms/forms.go:37.31,40.37 2 1
+github.com/notirawap/bookings/internal/forms/forms.go:40.37,43.4 1 1
+github.com/notirawap/bookings/internal/forms/forms.go:48.39,50.13 2 1
+github.com/notirawap/bookings/internal/forms/forms.go:50.13,52.3 1 1
+github.com/notirawap/bookings/internal/forms/forms.go:53.2,53.13 1 1
+github.com/notirawap/bookings/internal/forms/forms.go:57.57,59.21 2 1
+github.com/notirawap/bookings/internal/forms/forms.go:59.21,62.3 2 1
+github.com/notirawap/bookings/internal/forms/forms.go:63.2,63.13 1 1
+github.com/notirawap/bookings/internal/forms/forms.go:67.38,68.40 1 1
+github.com/notirawap/bookings/internal/forms/forms.go:68.40,70.3 1 1

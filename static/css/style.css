@@ -1,0 +1,70 @@
+/* Pure CSS Gradient Background Animation - Manuel Pinto */
+.gradient-bg {
+	background: linear-gradient(-45deg, #A3CC00, #00A6CE, #00C4F7, #003F63);
+	background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+}
+
+.gradient-bg1 {
+	background: linear-gradient(-45deg, #A3CC00, #00A6CE, #00C4F7, #003F63);
+	background-size: 400% 400%;
+	animation: gradient 3s ease infinite;
+}
+
+.gradient-bg2 {
+	background: linear-gradient(-45deg, #00A6CE, #00C4F7, #003F63, #A3CC00);
+	background-size: 400% 400%;
+	animation: gradient 3s ease infinite;
+}
+
+.gradient-bg3 {
+	background: linear-gradient(-45deg, #00C4F7, #003F63, #A3CC00, #00A6CE);
+	background-size: 400% 400%;
+	animation: gradient 3s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.shadow {
+	text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.scroll-btn {
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: background-color 0.5s ease;
+}
+
+.scroll-btn:hover {
+  background-color: rgba(200, 200, 200, 0.9);
+}
+
+#main-carousel .carousel-item {
+	position: relative;
+    height: 630px;
+  	z-index: 1;
+}
+
+.my-footer {
+    height: 5em;
+    margin-top: 5em;
+    padding:2em;
+    color:white;
+    font-size: 80%;
+}
+
+.notie-container {
+	z-index: 1000000; 
+}
+.swal2-html-container {
+    z-index: 10000000000;
+}

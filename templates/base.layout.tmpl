@@ -1,0 +1,126 @@
+<!-- Layout template named "base" -->
+{{define "base"}}
+<!doctype html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Meticuly</title>
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous"> <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/css/datepicker-bs5.min.css">
+        <link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css">
+        <!-- Import CSS locally -->
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+        {{block "css" .}}{{end}}
+</head>
+  <body>
+    <!-- Navigation Bar -->
+    <!-- <nav class="navbar navbar-expand-lg bg-white position-fixed w-100 top-0" style="z-index: 50;"> -->
+    <nav class="navbar navbar-expand-lg bg-white border-bottom border-body">
+      <div class="container-fluid">
+        <a class="navbar-brand ms-5" href="/"><img src="/static/images/logo2.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="200" height="50" loading="lazy"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto me-5 mb-2 mb-lg-0">
+              <li class="nav-item ms-20 me-5">
+                <a class="nav-link active" aria-current="page" href="/"><strong>Home</strong></a>
+              </li>
+              <li class="nav-item me-5">
+                <a class="nav-link" href="/about"><strong>About</strong></a>
+              </li>
+              <li class="nav-item me-5">
+                <a class="nav-link" href="/contact" aria-disabled="true"><strong>Contact</strong></a>
+              </li>
+            </ul>
+            <ul class="navbar-nav ms-auto me-5 mb-2 mb-lg-0">
+              <li class="nav-item me-5">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle btn btn-outline-secondary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-person-fill-gear" viewBox="0 0 16 16">
+                      <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4m9.886-3.54c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382zM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0"/>
+                    </svg>
+                    <strong>Admin</strong>
+                  </a>
+                  <ul class="dropdown-menu">
+                    {{if eq .IsAuthenticated true}}
+                      <li><a class="dropdown-item" href="/admin/doctors-table"><strong>Dashboard</strong></a></li>
+                      <li><a class="dropdown-item" href="/user/logout"><strong>Log out</strong></a></li>
+                    {{else}}
+                      <li><a class="dropdown-item" href="/user/login"><strong>Log in</strong></a></li>
+                    {{end}}
+                  </ul>
+                </li>
+              </li>
+            </ul>
+          </div>
+      </div>
+    </nav>
+
+    <!-- Block for custom content -->
+    {{block "content" .}}
+        
+    {{end}}
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white text-center py-2 fixed-bottom">
+      © 2024 Meticuly.
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js" integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/js/datepicker-full.min.js"></script>
+    <!-- import third-party JS file for Notification -->
+    <script src="https://unpkg.com/notie"></script> 
+    <!-- import third-party JS file for Modal -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Import JS locally -->
+    <script src="/static/js/app.js"></script>
+
+    <!-- Block for custom Javascript -->
+    {{block "js" .}}{{end}}
+
+    <script>
+      // Store JS module to be accessible for all code
+      let attention = Prompt();
+      
+      // Disable form submissions if there are invalid fields
+      (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+          let forms = document.querySelectorAll('.needs-validation');
+          Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+
+      // Configure Alerts
+      function notify(msg, msgType) {
+        notie.alert({
+          type: msgType,
+          text: msg,
+        })
+      }
+      // If Flash field has value, execute this.
+      {{with .Flash}} 
+        notify("{{.}}", "success")
+      {{end}}
+      // If Error field has value, execute this.
+      {{with .Error}}
+        notify("{{.}}", "error")
+      {{end}}
+    </script>
+  </body>
+</html>
+{{end}}

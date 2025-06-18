@@ -1,0 +1,45 @@
+{{template "base" .}}
+
+{{define "content"}}
+<div class="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center" 
+     style="background: url('/static/images/3dprint.png') no-repeat center center; background-size: cover; z-index: -1;">
+  <div class="border rounded-4 p-4 text-center bg-light" style="max-width: 500px; width: 100%;">
+    <h1 class="mb-4"><strong>Register Doctor</strong></h1>
+    <form action="/doctor/form" method="post" novalidate>
+      <input type="hidden" name="csrf_token" value="{{.CSRFToken}}">
+
+      <div class="mb-3 text-start">
+        <label class="form-label" for="first_name">First Name</label>
+        {{with .Form.Errors.Get "first_name"}}<label class="text-danger">{{.}}</label>{{end}}
+        <input required type="text" class="form-control {{with .Form.Errors.Get "first_name"}}is-invalid{{end}}" 
+               id="first_name" name="first_name" value="{{.Form.Get "first_name"}}">
+      </div>
+
+      <div class="mb-3 text-start">
+        <label class="form-label" for="last_name">Last Name</label>
+        {{with .Form.Errors.Get "last_name"}}<label class="text-danger">{{.}}</label>{{end}}
+        <input required type="text" class="form-control {{with .Form.Errors.Get "last_name"}}is-invalid{{end}}" 
+               id="last_name" name="last_name" value="{{.Form.Get "last_name"}}">
+      </div>
+
+      <div class="mb-3 text-start">
+        <label class="form-label" for="license">License</label>
+        {{with .Form.Errors.Get "license"}}<label class="text-danger">{{.}}</label>{{end}}
+        <input required type="text" class="form-control {{with .Form.Errors.Get "license"}}is-invalid{{end}}" 
+               id="license" name="license" value="{{.Form.Get "license"}}">
+      </div>
+
+      <div class="mb-3 text-start">
+        <label class="form-label" for="hospital">Hospital</label>
+        {{with .Form.Errors.Get "hospital"}}<label class="text-danger">{{.}}</label>{{end}}
+        <input required type="text" class="form-control {{with .Form.Errors.Get "hospital"}}is-invalid{{end}}" 
+               id="hospital" name="hospital" value="{{.Form.Get "hospital"}}">
+      </div>
+
+      <button type="submit" class="btn btn-success w-100 mt-3">Register Doctor</button>
+    </form>
+  </div>
+</div>
+
+
+{{end}}

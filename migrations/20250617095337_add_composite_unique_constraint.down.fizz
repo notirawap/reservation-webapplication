@@ -1,0 +1,1 @@
+remove_index("doctors", name: "uq_doctors_name_license")

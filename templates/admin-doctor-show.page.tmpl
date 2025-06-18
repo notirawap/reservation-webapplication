@@ -1,0 +1,79 @@
+
+{{template "admin" .}}
+
+{{define "page-title"}}Doctor Profile{{end}}
+
+{{define "content"}}
+{{$doc := index .Data "doctor"}}
+    <div class="col-md-12">
+        <form action="/admin/update-doctor-info/{{$doc.ID}}" method="post" class="" novalidate>
+            <input type="hidden" name="csrf_token" value="{{.CSRFToken}}">
+            <div class="mb-3 text-start">
+                <label class="form-label" for="first_name">First Name</label>
+                {{with .Form.Errors.Get "first_name"}}<label class="text-danger">{{.}}</label>{{end}}
+                <input required type="text" class="form-control {{with .Form.Errors.Get "first_name"}}is-invalid{{end}}" 
+                       id="first_name" name="first_name" value="{{$doc.FirstName}}">
+            </div>
+
+            <div class="mb-3 text-start">
+                <label class="form-label" for="last_name">Last Name</label>
+                {{with .Form.Errors.Get "last_name"}}<label class="text-danger">{{.}}</label>{{end}}
+                <input required type="text" class="form-control {{with .Form.Errors.Get "last_name"}}is-invalid{{end}}" 
+                       id="last_name" name="last_name" value="{{$doc.LastName}}">
+            </div>
+
+            <div class="mb-3 text-start">
+                <label class="form-label" for="license">License</label>
+                {{with .Form.Errors.Get "license"}}<label class="text-danger">{{.}}</label>{{end}}
+                <input required type="text" class="form-control {{with .Form.Errors.Get "license"}}is-invalid{{end}}" 
+                       id="license" name="license" value="{{$doc.License}}">
+            </div>
+
+            <div class="mb-3 text-start">
+                <label class="form-label" for="hospital">Hospital</label>
+                {{with .Form.Errors.Get "hospital"}}<label class="text-danger">{{.}}</label>{{end}}
+                <input required type="text" class="form-control {{with .Form.Errors.Get "hospital"}}is-invalid{{end}}" 
+                       id="hospital" name="hospital" value="{{$doc.Hospital}}">
+            </div>
+                <hr>
+                <div class="float-start">
+                    <input type="submit" class="btn btn-primary" value="Save">
+                    <a href="#!" class="btn btn-warning" onclick="confirmPopup('cancel')">Cancel</a>
+                </div>
+                <div class="float-end">
+                    <a href="#!" class="btn btn-danger" onclick="confirmPopup('delete')">Delete</a>
+                </div>
+                <div class="clearfix"></div>
+            </form>
+    </div>
+{{end}}
+
+{{define "js"}}
+{{$doc := index .Data "doctor"}}
+    <script>
+        // Create pop-up
+        const doctor = {{ $doc.ID }};
+        function confirmPopup(action) {
+            attention.custom({
+                icon: "warning",
+                msg: 'Are you sure?',
+                callback: function(result) {
+                    if (result != false) {
+                        let url = "";
+                        switch (action) {
+                            case "delete":
+                                url = "/admin/delete-doctor-info/"+ doctor;
+                                break;
+                            case "cancel":
+                                url = "/admin/doctors-table";
+                                break;
+                            default:
+                            return;
+                        }
+                        window.location.href = url;
+                    }
+                },
+            });
+        };
+    </script>
+{{end}}
