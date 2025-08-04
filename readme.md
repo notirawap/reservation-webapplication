@@ -1,5 +1,5 @@
 
-For Meticuly interview assignment.
+Reservation Web Application
 
 Backend
 - Go 1.15
