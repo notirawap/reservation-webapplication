@@ -1,15 +1,15 @@
-#Reservation Web Application
+# Reservation Web Application
 
-Backend
-- Go 1.15
-- PostgreSQL 17
-- pop v6.1.1 (github.com/gobuffalo/pop) data migration
-- chi router (github.com/go-chi/chi) lightweight HTTP router
-- alex edwards SCS (github.com/alexedwards/scs/v2) session management
-- nosurf (github.com/justinas/nosurf) CSRF protection middleware
+## Backend
+- **Language:** Go 1.15  
+- **Database:** PostgreSQL 17  
+- **Data Migration:** [pop v6.1.1](https://github.com/gobuffalo/pop)  
+- **HTTP Router:** [chi](https://github.com/go-chi/chi) – lightweight and fast router  
+- **Session Management:** [alex edwards SCS](https://github.com/alexedwards/scs/v2)  
+- **CSRF Protection:** [nosurf](https://github.com/justinas/nosurf) – middleware for CSRF defense  
 
-Frontend
-- Bootstrap 5 - CSS framework
-- Notie – notification UI
-- SweetAlert2 – modals and alerts
-- Themify Icons – icon set for admin UI
+## Frontend
+- **CSS Framework:** [Bootstrap 5](https://getbootstrap.com/)  
+- **Notifications:** [Notie](https://github.com/jaredreich/notie) – clean, simple notifications  
+- **Modals & Alerts:** [SweetAlert2](https://sweetalert2.github.io/) – modern alert and modal UI  
+- **Icon Set:** [Themify Icons](https://themify.me/themify-icons) – admin panel iconography  
